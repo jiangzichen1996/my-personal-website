@@ -36,6 +36,14 @@ nav{
 .nav li a{
     padding: 18px 15px;
 }
+.slide-title{
+    outline: none;
+    margin-top: 30px;
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
 header img{
     width: 100%;
     height: 100%;
