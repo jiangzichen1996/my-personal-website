@@ -2,12 +2,15 @@ nav{
     position: absolute;
     top: 0;
     width: 100%;
+    z-index: 4  ;
 }
 .container{
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
+    text-align: center;
+    letter-spacing: 2px;
 
 }
 #ico{
@@ -36,6 +39,17 @@ nav{
 .nav li a{
     padding: 18px 15px;
 }
+.vertical-align{
+    display: table;
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.vertical-align .container{
+    display: table-cell;
+    vertical-align: middle;
+}
 .slide-title{
     outline: none;
     margin-top: 30px;
@@ -44,10 +58,119 @@ nav{
     font-weight: 500;
     letter-spacing: 2px;
 }
-header img{
-    width: 100%;
-    height: 100%;
+.hello-im{
+    font-size: 19px;
+    margin-bottom: 30px;
+    margin-top: 0;
 }
+.header-mask{
+    background: url('../img/bg-1.jpg');
+    position: relative;
+    left: 0;
+    right: 0;
+    height: 500px;
+}
+.header-title-big{
+    font-size: 4.6875rem;
+    font-family: Roboto,sans-serif;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 5px;
+    line-height: initial;
+    margin-bottom: 15px;
+}
+.horizontal-line{
+    display: block;
+    padding-top: 3px;
+    padding-bottom: 12px;
+}
+.horizontal-line span{
+    width: 120px;
+    height: 2px;
+    display: inline-block;
+    text-align: center;
+    background: #ffb241;
+}
+.buttons-section{
+    margin-top: 45px;
+}
+.btn{
+    background-color: #f97c46;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 15px 30px 15px 31px;
+    border-radius: 30px;
+    letter-spacing: .7px;
+    transition: all ease .5s;
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+}
+.left-btn{
+    margin-right: 25px;
+    border: none;
+    color: #fff;
+}
+.right-btn{
+    background-color: #fff;
+    color: #111;
+    border: none;
+}
+.socialite{
+    padding-top: 22px;
+    padding-bottom: 22px;
+    position: relative;
+    background-color: #fff;
+    box-shadow: #a2a2a2 1px 0 10px;
+}
+.socialite .container-socialite{
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+}
+.down-button{
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+    z-index: 1;
+}
+.container-socialite .down-button a{
+    width: 45px;
+    height: 45px;
+    display: block;
+    color: #f97c46;
+    border: dotted 2px #f97c46;
+    font-size: 35px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: 7.5px;
+    text-align: center;
+    line-height: 45px;
+}
+.container-socialite .down-button a span{
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-top:dashed 7px #f97c46;
+    border-left:solid transparent 7px;
+    border-right:solid transparent 7px;
+    position: absolute;
+    left: 14px;
+    top: 19px;
+}
+
+
+
 @media (min-width: 768px){
     .container {
         width: 750px;
@@ -60,4 +183,8 @@ header img{
     .container {
         width: 1170px;
     }}
-
+@media (min-width: 992px){
+    .col-md-12 {
+        width: 100%;
+    }
+}
