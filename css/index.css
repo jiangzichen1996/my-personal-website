@@ -68,7 +68,7 @@ nav{
     position: relative;
     left: 0;
     right: 0;
-    height: 500px;
+    height: 760px;
 }
 .header-title-big{
     font-size: 4.6875rem;
@@ -168,6 +168,17 @@ nav{
     left: 14px;
     top: 19px;
 }
+.container .item{
+    padding-top: 3px;
+    height: 30px;
+    text-align: center;
+}
+.container .item:nth-child(2){
+    border-right: 1px solid #d7d1d8;
+}
+.container .item:nth-child(5){
+    border-left: 1px solid #d7d1d8;
+}
 
 
 
@@ -176,13 +187,17 @@ nav{
         width: 750px;
     }}
 @media (min-width: 992px){
-    .container {
+   .container {
         width: 970px;
     }}
 @media (min-width: 1200px){
     .container {
         width: 1170px;
-    }}
+    }
+
+
+
+}
 @media (min-width: 992px){
     .col-md-12 {
         width: 100%;

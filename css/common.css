@@ -13,5 +13,10 @@ body{
     min-width: 320px;
     font-weight: 400;
     position: relative;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     line-height: 1.6;
+    opacity: 1;
+    visibility: visible;
 }
