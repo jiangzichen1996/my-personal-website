@@ -20,3 +20,14 @@ body{
     opacity: 1;
     visibility: visible;
 }
+p {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-family: Open Sans,sans-serif;
+    font-size: 15px;
+    color: #585858;
+}
+
+img, iframe, embed {
+    vertical-align: middle;
+}
