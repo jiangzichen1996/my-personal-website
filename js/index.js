@@ -3,9 +3,10 @@
  */
 require(['jquery','canvas'],function(){
 
-
-
-
-
+    $('#about img').on('click',function(){
+        alert('hah');
+        alert('you fool')
+    })
+      $
 
     });
