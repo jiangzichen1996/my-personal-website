@@ -9,10 +9,12 @@ require(['jquery','canvas'],function(){
     })
 
 
-
-
-
-
     
+
+
+
+
+
+
 
     });
