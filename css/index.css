@@ -7,13 +7,18 @@ p {
 }
 img{
    max-width: 100%;
-
 }
+
 nav{
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 4;
+}
+#skin{
+    background: url("");
+    
+    
 }
 .container{
     margin-right: auto;
@@ -122,6 +127,7 @@ nav{
     display: inline-block;
     text-decoration: none;
     outline: none;
+    cursor: pointer;
 }
 .left-btn{
     margin-right: 25px;
@@ -253,7 +259,7 @@ section,.section{
 .fw-container{
     display: block;
     position: relative;
-    z-index: 3;
+    z-index: 2;
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
