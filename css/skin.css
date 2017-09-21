@@ -1,0 +1,50 @@
+#skin-container li{
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 25px;
+    margin: 0 2px 3px 0;
+    overflow: hidden;
+    position: relative;
+    transition: all .3s linear 0s;
+    width: 60px;
+}
+#skin-container .selected{
+    border: 2px solid #ffffff;
+}
+.skin1{
+    background: #f97c46;
+}
+.skin2{
+    background: #7877c1;
+}
+.skin3{
+    background: #c472d6;
+}
+.skin4{
+    background: #ff5454;
+}
+.skin5{
+    background: #f63145;
+}
+.skin6{
+    background: #f1c40f;
+}
+.skin7{
+    background: #feb500;
+}
+.skin8{
+    background: #73ae20;
+}
+.skin9{
+    background: #8eda5c;
+}
+.skin10{
+    background: #2ecc71;
+}
+.skin11{
+    background: #3ba5e3;
+}
+.skin12{
+    background: #c69c6d;
+}
