@@ -176,13 +176,12 @@ nav{
     height: 2px;
     display: inline-block;
     text-align: center;
-    background: #ffb241;
 }
 .buttons-section{
     margin-top: 45px;
 }
+
 .btn{
-    background-color: #f97c46;
     border: none;
     color: #fff;
     font-size: 14px;
@@ -235,8 +234,8 @@ nav{
     width: 45px;
     height: 45px;
     display: block;
-    color: #f97c46;
-    border: dotted 2px #f97c46;
+    border-style: dotted;
+    border-width:2px;
     font-size: 35px;
     border-radius: 50%;
     margin: 0 auto;
@@ -249,7 +248,8 @@ nav{
     display: inline-block;
     height: 0;
     width: 0;
-    border-top:dashed 7px #f97c46;
+    border-top-style:dashed;
+    border-top-width: 7px;
     border-left:solid transparent 7px;
     border-right:solid transparent 7px;
     position: absolute;
@@ -284,7 +284,6 @@ nav{
     display: block;
     height: 2px;
     width: 55px;
-    background: #ffb241;
     margin-top: 13px;
     margin-bottom: 18px;
     margin-left:auto ;

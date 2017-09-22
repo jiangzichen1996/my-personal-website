@@ -12,39 +12,77 @@
 #skin-container .selected{
     border: 2px solid #ffffff;
 }
-.skin1{
+
+.skin1,.skin1a::after{
     background: #f97c46;
 }
-.skin2{
+.skin1-font{
+    border-color: #f97c46;
+}
+.skin2,.skin2a::after{
     background: #7877c1;
 }
-.skin3{
+.skin2-font{
+    color: #7877c1;
+}
+.skin3,.skin3a::after{
     background: #c472d6;
 }
-.skin4{
+.skin3-font{
+    color: #c472d6;
+}
+.skin4,.skin4a::after{
     background: #ff5454;
 }
-.skin5{
+.skin4-font{
+    color: #ff5454;
+}
+.skin5,.skin5a::after{
     background: #f63145;
 }
-.skin6{
+.skin5-font{
+    color: #f63145;
+}
+.skin6,.skin6a::after{
     background: #f1c40f;
 }
-.skin7{
+.skin6-font{
+    color: #f1c40f;
+}
+.skin7,.skin7a::after{
     background: #feb500;
 }
-.skin8{
+.skin7-font{
+    color: #feb500;
+}
+.skin8,.skin8a::after{
     background: #73ae20;
 }
-.skin9{
+.skin8-font{
+    color: #73ae20;
+}
+.skin9,.skin9a::after{
     background: #8eda5c;
 }
-.skin10{
+.skin9-font{
+    color: #8eda5c;
+}
+.skin10,.skin10a::after{
     background: #2ecc71;
 }
-.skin11{
+.skin10-font{
+    color: #2ecc71;
+}
+.skin11,.skin11a::after{
     background: #3ba5e3;
 }
-.skin12{
+.skin11-font{
+    border-color:#3ba5e3;
+
+}
+.skin12,.skin12a::after{
     background: #c69c6d;
+}
+.skin12-font{
+    color: #c69c6d;
 }
