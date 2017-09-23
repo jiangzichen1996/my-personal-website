@@ -2,6 +2,18 @@
  * Created by ³¿ on 2017/8/20.
  */
 require(['jquery','canvas','jquery.cookie'],function($){
+
+
+    //¼ÓÔØ¶¯»­
+    $(window).load(function(){
+        console.log(111);
+        //$('body').addClass('loaded');
+        $('#loader-wrapper .load_title').remove();
+    });
+
+
+
+    //ÍøÒ³»»·ô
     var $skinLi=$('#skin-container li');
     var $skin;
     $skin= $.cookie('skinname');
@@ -22,11 +34,7 @@ require(['jquery','canvas','jquery.cookie'],function($){
             $(this).css('left','0');
         }
         skinBflag=!skinBflag;
-
-
     });
-
-
     $skinLi.on('click',function(){
         var $oldskin=$((".horizontal-line span")).attr('class');
         $skin=$(this).attr('class').split((/\b/))[0];
@@ -42,24 +50,26 @@ require(['jquery','canvas','jquery.cookie'],function($){
     });
     function removeSkin($oldskin){
         $('.horizontal-line span').add(".left-btn").add('.heading-title h4').removeClass($oldskin);
-        $(".down-button a").add(".down-button span").removeClass($oldskin+'-font');
+        $(".smooth-scroll").add(".down-button span").removeClass($oldskin+'-font');
         $('.heading-title h4').removeClass($oldskin+'a');
-
-
     }
     function changeSkin($skin){
         $('.horizontal-line span').add(".left-btn").addClass($skin);
-        $(".down-button a").add(".down-button span").addClass($skin+'-font');
+        $(".smooth-scroll").add(".down-button span").addClass($skin+'-font');
         $('.heading-title h4').addClass($skin+'a');
-
-
     }
+    //±³¾°Í¼Æ¬³äÂúÆÁÄ»
+    $('.header-mask').css('height',$(window).height());
+    //down-buttonµã»÷ÊÂ¼þ
+    $('.down-button').on('click',function(){
+        $("html, body").animate({
+            scrollTop: $("#about").offset().top }, {duration: 1000,easing: "swing"});
+        return false;
+
+
+    })
 
 
 
 
-
-
-
-
-    });
+});

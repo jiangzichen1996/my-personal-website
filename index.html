@@ -11,8 +11,15 @@
     <link rel="stylesheet" href="css/common.css"/>
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="stylesheet" href="css/skin.css"/>
+    <link rel="stylesheet" type="text/css" href="css/loader.css">
 </head>
 <body>
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <div class="load_title">正在加载站点<br><span>0v0</span></div>
+</div>
 <div id="skin-left">
     <div id="skin-container">
         <img src="img/chen.png" alt=""/>
@@ -74,14 +81,14 @@
         </div>
     </div>
 </header>
-<div class="socialite">
+<div id="socialite">
     <div class="container">
         <div class="row">
             <div class="container-socialite">
                 <div class="down-button">
-                    <a href="" class="smooth-scroll">
+                    <div class="smooth-scroll">
                         <span></span>
-                    </a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 item">邮箱</div>
@@ -168,6 +175,12 @@
 <footer></footer>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script>
+    $(window).load(function(){
+        $('body').addClass('loaded');
+        $('#loader-wrapper .load_title').remove();
+    });
+</script>
 <script src="js/require.js" data-main="js/index"></script>
 </body>
 </html>

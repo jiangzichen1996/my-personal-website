@@ -15,6 +15,10 @@ nav{
     width: 100%;
     z-index: 4;
 }
+#loadmask{
+    height: 100%;
+    width: 100%;
+}
 #skin{
     position: fixed;
     top: 250px;
@@ -155,7 +159,6 @@ nav{
     position: relative;
     left: 0;
     right: 0;
-    height: 760px;
 }
 .header-title-big{
     font-size: 4.6875rem;
@@ -207,14 +210,14 @@ nav{
     color: #111;
     border: none;
 }
-.socialite{
+#socialite{
     padding-top: 22px;
     padding-bottom: 22px;
     position: relative;
     background-color: #fff;
     box-shadow: #a2a2a2 1px 0 10px;
 }
-.socialite .container-socialite{
+#socialite .container-socialite{
     position: absolute;
     margin: 0 auto;
     right: 0;
@@ -229,8 +232,10 @@ nav{
     position: relative;
     top: -50px;
     z-index: 1;
+    cursor: pointer;
+
 }
-.container-socialite .down-button a{
+.smooth-scroll{
     width: 45px;
     height: 45px;
     display: block;
@@ -244,7 +249,7 @@ nav{
     text-align: center;
     line-height: 45px;
 }
-.container-socialite .down-button a span{
+.smooth-scroll span{
     display: inline-block;
     height: 0;
     width: 0;
