@@ -157,6 +157,7 @@ nav{
 .header-mask{
     background: url('../img/bg-1.jpg');
     position: relative;
+    height: 100vh;
     left: 0;
     right: 0;
 }

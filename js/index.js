@@ -58,18 +58,19 @@ require(['jquery','canvas','jquery.cookie'],function($){
         $(".smooth-scroll").add(".down-button span").addClass($skin+'-font');
         $('.heading-title h4').addClass($skin+'a');
     }
-    //±³¾°Í¼Æ¬³äÂúÆÁÄ»
-    $('.header-mask').css('height',$(window).height());
     //down-buttonµã»÷ÊÂ¼þ
     $('.down-button').on('click',function(){
         $("html, body").animate({
             scrollTop: $("#about").offset().top }, {duration: 1000,easing: "swing"});
         return false;
+    });
 
-
-    })
-
-
+    //¼ÓÔØ¶¯»­
+    setTimeout(function(){
+        $('body').addClass('loaded');
+        $('#loader-wrapper .load_title').remove();
+    },1000);
+    console.log($(window).scrollTop());
 
 
 });
