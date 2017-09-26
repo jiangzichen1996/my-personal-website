@@ -72,5 +72,6 @@ require(['jquery','canvas','jquery.cookie'],function($){
     },1000);
     console.log($(window).scrollTop());
 
+    //µ¼º½À¸
 
 });
