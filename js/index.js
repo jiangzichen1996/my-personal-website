@@ -3,13 +3,11 @@
  */
 require(['jquery','canvas','jquery.cookie'],function($){
 
-
     //加载动画
-    $(window).load(function(){
-        console.log(111);
-        //$('body').addClass('loaded');
+    setTimeout(function(){
+        $('body').addClass('loaded');
         $('#loader-wrapper .load_title').remove();
-    });
+    },1000);
 
 
 
@@ -65,12 +63,6 @@ require(['jquery','canvas','jquery.cookie'],function($){
         return false;
     });
 
-    //加载动画
-    setTimeout(function(){
-        $('body').addClass('loaded');
-        $('#loader-wrapper .load_title').remove();
-    },1000);
-    console.log($(window).scrollTop());
 
     //导航栏
 
