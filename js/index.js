@@ -65,5 +65,16 @@ require(['jquery','canvas','jquery.cookie'],function($){
 
 
     //µ¼º½À¸
-
+    var $nToggle=$('.navbar-toggle');
+    $nToggle[0].bflag=true;
+    $nToggle.on('click',function(){
+        if(this.bflag==true){
+            $('.icon-bar',this).eq(1).addClass('mid');
+            $('.icon-bar',this).eq(2).addClass('bottom');
+        }else{
+            $('.icon-bar',this).eq(1).removeClass('mid');
+            $('.icon-bar',this).eq(2).removeClass('bottom');
+        }
+        this.bflag=!this.bflag;
+    });
 });
