@@ -26,8 +26,25 @@ p {
     font-family: Open Sans,sans-serif;
     font-size: 15px;
     color: #585858;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity .24s ease-in-out;
+    -moz-transition: opacity .24s ease-in-out;
+    transition: opacity .24s ease-in-out;
 }
 
 img, iframe, embed {
     vertical-align: middle;
+}
+img{
+    max-width: 100%;
+}
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    letter-spacing: 2px;
+
 }
