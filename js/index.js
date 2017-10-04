@@ -71,12 +71,12 @@ require(['jquery','canvas','jquery.cookie'],function($){
         if(this.bflag==true){
             $('.icon-bar',this).eq(1).addClass('mid');
             $('.icon-bar',this).eq(2).addClass('bottom');
-            $('#mobile-menu').addClass('active').toggle('fast');
+            $('#mobile-menu').addClass('active').toggle('slow');
 
         }else{
             $('.icon-bar',this).eq(1).removeClass('mid');
             $('.icon-bar',this).eq(2).removeClass('bottom');
-            $('#mobile-menu').removeClass('active').toggle('fast');
+            $('#mobile-menu').removeClass('active').toggle('slow');
         }
         this.bflag=!this.bflag;
         $('#ico').toggle()
