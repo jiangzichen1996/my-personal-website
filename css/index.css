@@ -91,32 +91,42 @@ nav{
     list-style-type: none;
 }
 #mobile-menu .nav-menu li{
-    opacity: 1;
-    -webkit-transform: translateY(-1rem);
-    -ms-transform: translateY(-1rem);
-    transform: translateY(-1rem);
-    transition: all 1.5s cubic-bezier(.23,1,.32,1);
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    transition: all 1s linear;
+    transition-delay: 0s;
+
+
 }
+#mobile-menu .inner-wrap .trans{
+    opacity: 1;
+    -webkit-transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    transform: translateY(-40px);
+}
+
 #mobile-menu .nav-menu li:nth-child(1) a{
     color: #555;
 }
-#mobile-menu.active #top-menu li:nth-child(1) {
+#mobile-menu.active .nav-menu li:nth-child(1) {
     transition-delay: .5s;
 }
-#mobile-menu.active .nav_menu li:nth-child(2) {
+#mobile-menu.active .nav-menu li:nth-child(2) {
     transition-delay: .6s;
 }
-#mobile-menu.active .nav_menu li:nth-child(3) {
+#mobile-menu.active .nav-menu li:nth-child(3) {
     transition-delay: .7s;
 }
-#mobile-menu.active .nav_menu li:nth-child(4) {
+#mobile-menu.active .nav-menu li:nth-child(4) {
     transition-delay: .8s;
 }
-#mobile-menu.active .nav_menu li:nth-child(5) {
+#mobile-menu.active .nav-menu li:nth-child(5) {
     transition-delay: .9s;
 }
-#mobile-menu.active .nav_menu li:nth-child(6) {
-    transition-delay: .10s;
+#mobile-menu.active .nav-menu li:nth-child(6) {
+    transition-delay: 1s;
 }
 #top-menu li a{
     display: inline-block;
@@ -138,6 +148,9 @@ nav{
     float: left;
     margin-left: 100px;
     color: #cccccc;
+}
+.fullscreen-nav-open{
+    overflow-y: hidden;
 }
 
 /*º”‘ÿª≠√Ê*/
@@ -397,9 +410,6 @@ nav{
 
 }
 
-h4{
-    font-style: 17px;
-}
 .heading-title-2{
     color: #ffb241;
 }
@@ -470,7 +480,7 @@ footer{
 .fw-col-xs-1, .fw-col-sm-1, .fw-col-md-1, .fw-col-lg-1, .fw-col-xs-2, .fw-col-sm-2, .fw-col-md-2, .fw-col-lg-2, .fw-col-xs-3, .fw-col-sm-3, .fw-col-md-3, .fw-col-lg-3, .fw-col-xs-4, .fw-col-sm-4, .fw-col-md-4, .fw-col-lg-4, .fw-col-xs-5, .fw-col-sm-5, .fw-col-md-5, .fw-col-lg-5, .fw-col-xs-6, .fw-col-sm-6, .fw-col-md-6, .fw-col-lg-6, .fw-col-xs-7, .fw-col-sm-7, .fw-col-md-7, .fw-col-lg-7, .fw-col-xs-8, .fw-col-sm-8, .fw-col-md-8, .fw-col-lg-8, .fw-col-xs-9, .fw-col-sm-9, .fw-col-md-9, .fw-col-lg-9, .fw-col-xs-10, .fw-col-sm-10, .fw-col-md-10, .fw-col-lg-10, .fw-col-xs-11, .fw-col-sm-11, .fw-col-md-11, .fw-col-lg-11, .fw-col-xs-12, .fw-col-sm-12, .fw-col-md-12, .fw-col-lg-12, .fw-col-xs-15, .fw-col-sm-15, .fw-col-md-15, .fw-col-lg-15 {
     position: relative;
     min-height: 1px;
-    paddin g-left: 15px;
+    padding-left: 15px;
     padding-right: 15px;
     box-sizing: border-box;
 }
