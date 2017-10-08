@@ -33,13 +33,25 @@ require(['jquery','canvas','jquery.cookie'],function($){
         }
         skinBflag=!skinBflag;
     });
+
     $skinLi.on('click',function(){
-        var $oldskin=$((".horizontal-line span")).attr('class');
+        var $oldskin=$(".horizontal-line span").attr('class');
         $skin=$(this).attr('class').split((/\b/))[0];
         $.cookie('skinname',$skin,{expires:30});
         $(this).addClass('selected').siblings().removeClass('selected');
         removeSkin($oldskin);
         changeSkin($skin);
+
+    });
+    var $navLi=$('.nav1 li a').add('#top-menu li a');
+    $navLi.hover(function(){
+        var $oldskin=$(".horizontal-line span").attr('class');
+        $(this).addClass($oldskin+'-font');
+    },function(){
+        var $oldskin=$(".horizontal-line span").attr('class');
+
+        $(this).removeClass($oldskin+'-font');
+
     });
     changeSkin($skin);
     $('#skin-reset').on('click',function(){
@@ -48,12 +60,12 @@ require(['jquery','canvas','jquery.cookie'],function($){
     });
     function removeSkin($oldskin){
         $('.horizontal-line span').add(".left-btn").add('.heading-title h4').removeClass($oldskin);
-        $(".smooth-scroll").add(".down-button span").removeClass($oldskin+'-font');
+        $(".smooth-scroll").add(".down-button span").add(".heading-title-2").removeClass($oldskin+'-font');
         $('.heading-title h4').removeClass($oldskin+'a');
     }
     function changeSkin($skin){
         $('.horizontal-line span').add(".left-btn").addClass($skin);
-        $(".smooth-scroll").add(".down-button span").addClass($skin+'-font');
+        $(".smooth-scroll").add(".down-button span").add(".heading-title-2").addClass($skin+'-font');
         $('.heading-title h4').addClass($skin+'a');
     }
     //down-buttonµã»÷ÊÂ¼þ
