@@ -76,7 +76,7 @@ require(['jquery','canvas','jquery.cookie'],function($){
     });
 
 
-    //µ¼º½À¸
+    //ÒÆ¶¯¶Ëµ¼º½À¸ÇÐ»»
     var $nToggle=$('.navbar-toggle');
     $nToggle[0].bflag=true;
     var $mobLi =$('#mobile-menu .nav-menu li')
@@ -98,6 +98,32 @@ require(['jquery','canvas','jquery.cookie'],function($){
         this.bflag=!this.bflag;
         $('#ico').toggle()
     });
+    //    µ¼º½À¸ÒÆ¶¯
+    var $header=$('nav');
+    var $body = $('body');
+    var lastScroll=0;
+    function move () {
+        if(lastScroll-$body.scrollTop()>0){
+            $header.css('height','50px');
+        }else if(lastScroll-$body.scrollTop()<0){
+            $header.css('height','0');
+
+        }
+        lastScroll = $body.scrollTop();
+    }
+
+    var timer = setInterval(move,10);
+    setInterval(function(){
+        if($body.scrollTop()<120){
+            $header.css({
+                'position':'fixed',
+                'background':'black'
+            });
+            clearInterval(timer);
+        }else{
+            timer = setInterval(move,10)
+        }
+    },10);
 
 
 
