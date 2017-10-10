@@ -104,7 +104,10 @@ require(['jquery','canvas','jquery.cookie'],function($){
     var lastScroll=0;
     function move () {
         if(lastScroll-$body.scrollTop()>0){
-            $header.css('height','50px');
+            $header.css({
+                'height':'50px',
+                'background':'black'
+            });
         }else if(lastScroll-$body.scrollTop()<0){
             $header.css('height','0');
 
@@ -117,13 +120,99 @@ require(['jquery','canvas','jquery.cookie'],function($){
         if($body.scrollTop()<120){
             $header.css({
                 'position':'fixed',
-                'background':'black'
+                'background':'rgba(0,0,0,0)'
             });
             clearInterval(timer);
         }else{
             timer = setInterval(move,10)
         }
     },10);
+    //    ÎÄ×Ö¶¯»­
+        var $sentence1=$('.sentence1');
+        var $sentence2=$('.sentence2');
+        var $words=$($sentence1.children());
+
+
+    setTimeout(function(){
+        sentence1();
+        setTimeout(function(){
+            $words=$($sentence2.children());
+            sentence2();
+        },4000);
+        setInterval(function(){
+
+            $words=$($sentence1.children());
+            sentence1();
+            setTimeout(function(){
+                $words=$($sentence2.children());
+                sentence2();
+            },4000);
+        },11000);
+
+
+        //},11000);
+    },1500);
+        function sentence1(){
+        wordfadeIn();
+        setTimeout(function(){
+            wordSlideDown();
+        },2700);
+        setTimeout(function(){
+            $sentence1.css('display','none');
+            $sentence2.css('display','inline');
+        },3800);}
+
+    function sentence2(){
+        wordfadeIn();
+        setTimeout(function(){
+            wordSlideDown();
+        },4800);
+        setTimeout(function(){
+            $sentence1.css('display','inline');
+            $sentence2.css('display','none');
+        },7000);}
+
+
+
+
+    function wordfadeIn(){
+            var count=300;
+            for(var i=0; i<$words.length;i++){
+                var $chars=$($words[i]).children();
+                    for(var j=0;j<$chars.length;j++){
+                        var $charj=$($chars[j]);
+                        count=count+300;
+                        $charj.removeAttr('style').fadeIn(count);
+
+                    }
+            }
+        return count;
+        }
+    function wordSlideDown(){
+        var count=100;
+        for(var i=0; i<$words.length;i++){
+            var $chars=$($words[i]).children();
+            for(var j=0;j<$chars.length;j++){
+                var $charj=$($chars[j]);
+                count=count+100;
+                $charj.css({
+                    'transition':' all 1s ease',
+                    'transition-delay': count+'ms',
+                    'top':'20px',
+                    'filter':'alpha(opacity=0)',
+                    'opacity':'0'});
+            }
+
+        }
+        setTimeout(function(){$chars.fadeOut();},count);
+
+        return count;
+
+    }
+
+
+
+
 
 
 
