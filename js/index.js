@@ -1,7 +1,7 @@
 /**
  * Created by ³¿ on 2017/8/20.
  */
-require(['jquery','canvas','jquery.cookie'],function($){
+require(['jquery','jquery.cookie'],function($){
 
     //¼ÓÔØ¶¯»­
     setTimeout(function(){
@@ -40,7 +40,15 @@ require(['jquery','canvas','jquery.cookie'],function($){
         changeSkin($skin);
 
     });
-    var $navLi=$('.nav1 li a').add('#top-menu li a');
+    var $navLi=$('.nav1 li a').add('#top-menu li a').add('.mobile-home li');
+    $('.home').hover(function(){
+        var $oldskin=$(".horizontal-line span").attr('class');
+        $('.first-list a').addClass($oldskin+'-font');
+    },function(){
+        var $oldskin=$(".horizontal-line span").attr('class');
+        $('.first-list a').removeClass($oldskin+'-font');
+
+    });
     $navLi.hover(function(){
         var $oldskin=$(".horizontal-line span").attr('class');
         $(this).addClass($oldskin+'-font');
@@ -57,12 +65,12 @@ require(['jquery','canvas','jquery.cookie'],function($){
     });
     function removeSkin($oldskin){
         $('.horizontal-line span').add(".left-btn").add('.heading-title h4').removeClass($oldskin);
-        $(".smooth-scroll").add(".down-button span").add(".heading-title-2").removeClass($oldskin+'-font');
+        $(".smooth-scroll").add('.record').add(".down-button span").add(".heading-title-2").removeClass($oldskin+'-font');
         $('.heading-title h4').removeClass($oldskin+'a');
     }
     function changeSkin($skin){
         $('.horizontal-line span').add(".left-btn").addClass($skin);
-        $(".smooth-scroll").add(".down-button span").add(".heading-title-2").addClass($skin+'-font');
+        $(".smooth-scroll").add('.record').add(".down-button span").add(".heading-title-2").addClass($skin+'-font');
         $('.heading-title h4').addClass($skin+'a');
     }
     //down-buttonµã»÷ÊÂ¼þ
@@ -85,16 +93,15 @@ require(['jquery','canvas','jquery.cookie'],function($){
             $('#icon2').css('display','block');
             $('nav').css('background','white');
             $mobLi.addClass('trans');
-
+            this.bflag=!this.bflag;
         }else{
             closeNav();
         }
-        this.bflag=!this.bflag;
+
         $('#ico').toggle()
     });
-    $('.menu-item a').on('click',function(){
+    $('.menu-item a').not('.mobile-first-list a' ).add('.mobile-home li').on('click',function(){
         closeNav();
-
     });
     var $iconBar=$('.icon-bar');
     function closeNav(){
@@ -104,10 +111,42 @@ require(['jquery','canvas','jquery.cookie'],function($){
         $mobLi.removeClass('trans');
         $('body').removeClass('fullscreen-nav-open');
         $('#icon2').css('display','none');
+        $('#ico').css('display','block');
         $('nav').removeAttr('style');
-
-
+        $nToggle[0].bflag=!$nToggle[0].bflag;
     }
+    //Ö÷Ò³ÇÐ»»
+    let mFlag=true;
+    $('.nav1>li:nth-child(1)').hover(function(){
+        $('.home').css('display','block');
+    },function(){
+        $('.home').css('display','none');
+    });
+    $('.mobile-first-list').on('click',function(){
+        if(mFlag==true){
+            $('.mobile-home').fadeIn();
+        }else{
+            $('.mobile-home').fadeOut();
+        }
+        mFlag=!mFlag;
+        return false;
+    });
+    //Ö÷Í¼Æ¬ÇÐ»»
+    var $mask=$('.header-mask');
+    $('.space').on('click',function(){
+        $mask.css('background-image','url("img/bg-1.jpg")')
+    });
+    $('.dusk').on('click',function(){
+        $mask.css('background-image','url("img/bg-2.jpg")')
+    });
+    $('.plateau').on('click',function(){
+        $mask.css('background-image','url("img/bg-3.jpg")')
+    });
+    $('.snow').on('click',function(){
+        $mask.css('background-image','url(img/bg-4.jpg)')
+    });
+
+
 
     //    µ¼º½À¸ÒÆ¶¯
     var $header=$('nav');
@@ -117,15 +156,22 @@ require(['jquery','canvas','jquery.cookie'],function($){
         if(lastScroll-$body.scrollTop()>0){
             $header.css({
                 'height':'50px',
-                'position':'fixed'
+                'position':'fixed',
+                'overflow':'visible'
+
             });
+            $('#ico').css('display','block');
             if($body.scrollTop()>120){
                 $header.css({
                     'background':'black'
                 });
             }
         }else if(lastScroll-$body.scrollTop()<0){
-            $header.css('height','0');
+            $header.css({
+                    'height':'0',
+                    'overflow':'hidden'
+                }
+            );
 
         }
         lastScroll = $body.scrollTop();

@@ -57,12 +57,20 @@
         </div>
         <div class="collapse navbar-collapse" id="responsive-navbar">
             <ul class="nav1 navbar-nav">
-                <li><a href="">HOME <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <li><a href="">PAGES <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <li><a href="#about">ABOUT <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <li><a href="#service">SERVICE <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <li><a href="">MY WORKS <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <li><a href="#contact">CONTACT <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
+                <li class="first-list">
+                    <a href="">HOME <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul class="home">
+                        <li class="snow">Home-Snow</li>
+                        <li class="dusk">Home-Dusk</li>
+                        <li class="plateau">Home-Plateau</li>
+                        <li class="space">Home-Space</li>
+                    </ul>
+                </li>
+                <li><a href="">PAGES </a></li>
+                <li><a href="#about">ABOUT </a></li>
+                <li><a href="#service">SERVICE </a></li>
+                <li><a href="">MY WORKS </a></li>
+                <li><a href="#contact">CONTACT </a></li>
             </ul>
         </div>
     </div>
@@ -71,12 +79,20 @@
 
     <div class="inner-wrap">
             <ul id="top-menu" class="nav-menu">
-                <li class="menu-item"><a href="">HOME <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <li class="menu-item"><a href="">PAGES <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <li class="menu-item"><a href="#about">ABOUT <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <li class="menu-item"><a href="#service">SERVICE <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <li class="menu-item"><a href="">MY WORKS <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <li class="menu-item"><a href="#contact">CONTACT <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
+                <li class="menu-item mobile-first-list">
+                    <a href="">HOME <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul class="mobile-home">
+                        <li class="snow">Home-Snow</li>
+                        <li class="dusk">Home-Dusk</li>
+                        <li class="plateau">Home-Plateau</li>
+                        <li class="space">Home-Space</li>
+                    </ul>
+                </li>
+                <li class="menu-item"><a href="">PAGES </a></li>
+                <li class="menu-item"><a href="#about">ABOUT </a></li>
+                <li class="menu-item"><a href="#service">SERVICE </a></li>
+                <li class="menu-item"><a href="">MY WORKS </a></li>
+                <li class="menu-item"><a href="#contact">CONTACT </a></li>
             </ul>
     </div>
 </div>
@@ -180,7 +196,7 @@
                 </p>
             </div>
             <div class="fw-col-xs-12 fw-col-sm-6">
-                <img src="" alt=""/>
+                <img src="img/person.jpg" alt=""/>
             </div>
         </div>
     </div>
@@ -228,22 +244,36 @@
     <div class="fw-container">
         <div class="fw-row">
             <div class="fw-col-md-12">
-                <div class="heading-title">
-                    <h4>Contact with me</h4>
-                    QQ &nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;843909098&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>
-                    邮箱:&nbsp;&nbsp;&nbsp;&nbsp;843909098@qq.com<br/>
-                    手机:&nbsp;&nbsp;&nbsp;&nbsp;15590887712&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+                <div class="heading-title col-lg-12">
+                    <h2>Contact me</h2>
+
+                    <form class="form" id="form1">
+                        <p class="name">
+                            <input class="input" name="name" type="text" placeholder="Name" id="name"></input>
+                        </p>
+                        <p class="email">
+                            <input class="input" name="email" type="text" placeholder="Email" id="email"></input>
+                        </p>
+                        <p class="comment">
+                            <textarea class="input" name="text" type="text" placeholder="Message" id="comment"></textarea>
+                        </p>
+                        <div class="submit input">
+                            <input value="SEND" type="submit" id="button-blue"></input>
+                        </div>
+
+
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section id="work" class="fw-main-row bg-white-section">
-    <div class="fw-container">
+<!--<section id="work" class="fw-main-row bg-white-section">-->
+    <!--<div class="fw-container">-->
 
-    </div>
+    <!--</div>-->
 
-</section>
+<!--</section>-->
 
 
 <footer>
@@ -254,7 +284,7 @@
         <i class="fa fa-weixin" aria-hidden="true"></i>
         <span class="flie">
             Copyright ©2017-2018 蒋子晨
-            <a href="http://www.miibeian.gov.cn">鲁ICP备17037832号-1</a>
+            <a class="record" href="http://www.miibeian.gov.cn">鲁ICP备17037832号-1</a>
         </span>
     </div>
 
