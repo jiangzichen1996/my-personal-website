@@ -1,13 +1,18 @@
 /**
  * Created by ³¿ on 2017/8/20.
  */
-require(['jquery','jquery.cookie'],function($){
 
+(function(){
     //¼ÓÔØ¶¯»­
     setTimeout(function(){
         $('body').addClass('loaded');
         $('#loader-wrapper .load_title').remove();
     },1000);
+    setTimeout(function(){
+        $('#loader-wrapper').css('display','none');
+    },2000);
+
+
     //ÍøÒ³»»·ô
     var $skinLi=$('#skin-container li');
     var $skin;
@@ -150,9 +155,12 @@ require(['jquery','jquery.cookie'],function($){
 
     //    µ¼º½À¸ÒÆ¶¯
     var $header=$('nav');
+
     var $body = $('body');
+    let $html= $('html');
     var lastScroll = $body.scrollTop();
-    function move () {
+    var lastScroll2 = $html.scrollTop();
+    function move1 () {
         if(lastScroll-$body.scrollTop()>0){
             $header.css({
                 'height':'50px',
@@ -173,25 +181,57 @@ require(['jquery','jquery.cookie'],function($){
                 }
             );
 
+
         }
         lastScroll = $body.scrollTop();
     }
-    var timer = setInterval(move,10);
+    function move2 () {
+        if(lastScroll2-$html.scrollTop()>0){
+            $header.css({
+                'height':'50px',
+                'position':'fixed',
+                'overflow':'visible'
+
+            });
+            $('#ico').css('display','block');
+            if($html.scrollTop()>120){
+                $header.css({
+                    'background':'black'
+                });
+            }
+        }else if(lastScroll2-$html.scrollTop()<0){
+            $header.css({
+                    'height':'0',
+                    'overflow':'hidden'
+                }
+            );
+
+
+        }
+        lastScroll2 = $html.scrollTop();
+    }
+    var timer = setInterval(move1,10);
+    var timer2 = setInterval(move2,10);
+
     setInterval(function(){
-        if($body.scrollTop()<120){
+        if($body.scrollTop()>120||$html.scrollTop()>120){
+            timer = setInterval(move1,10);
+            timer2 = setInterval(move2,10);
+        }
+        else{
             $header.css({
                 'position':'fixed',
                 'background':'rgba(0,0,0,0)'
             });
             clearInterval(timer);
-        }else{
-            timer = setInterval(move,10)
+            clearInterval(timer2);
+
         }
     },10);
     //    ÎÄ×Ö¶¯»­
-        var $sentence1=$('.sentence1');
-        var $sentence2=$('.sentence2');
-        var $words=$($sentence1.children());
+    var $sentence1=$('.sentence1');
+    var $sentence2=$('.sentence2');
+    var $words=$($sentence1.children());
     setTimeout(function(){
         sentence1();
         setTimeout(function(){
@@ -208,7 +248,7 @@ require(['jquery','jquery.cookie'],function($){
             },4000);
         },11000);
     },1500);
-        function sentence1(){
+    function sentence1(){
         wordfadeIn();
         setTimeout(function(){
             wordSlideDown();
@@ -228,18 +268,18 @@ require(['jquery','jquery.cookie'],function($){
             $sentence2.css('display','none');
         },7000);}
     function wordfadeIn(){
-            var count=300;
-            for(var i=0; i<$words.length;i++){
-                var $chars=$($words[i]).children();
-                    for(var j=0;j<$chars.length;j++){
-                        var $charj=$($chars[j]);
-                        count=count+300;
-                        $charj.removeAttr('style').fadeIn(count);
+        var count=300;
+        for(var i=0; i<$words.length;i++){
+            var $chars=$($words[i]).children();
+            for(var j=0;j<$chars.length;j++){
+                var $charj=$($chars[j]);
+                count=count+300;
+                $charj.removeAttr('style').fadeIn(count);
 
-                    }
             }
-        return count;
         }
+        return count;
+    }
     function wordSlideDown(){
         var count=100;
         for(var i=0; i<$words.length;i++){
@@ -276,7 +316,9 @@ require(['jquery','jquery.cookie'],function($){
             $('.wechat').fadeOut('fast');
 
         }
-    })
+    });
+
+})();
 
 
 
@@ -285,5 +327,3 @@ require(['jquery','jquery.cookie'],function($){
 
 
 
-
-});
