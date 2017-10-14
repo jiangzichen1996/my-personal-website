@@ -3,6 +3,8 @@
  */
 
 (function(){
+
+    'use strict';
     //º”‘ÿ∂Øª≠
     setTimeout(function(){
         $('body').addClass('loaded');
